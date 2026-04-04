@@ -2,13 +2,19 @@
 
 echo "Creating symlinks from dotfiles to ~/.config"
 
-ln -s ../Thunar/ ~/.config/
-ln -s ../htop/ ~/.config/
-ln -s ../hypr/ ~/.config/
-ln -s ../kitty/ ~/.config/
-ln -s ../nvim/ ~/.config/
-ln -s ../tmux/ ~/.config/
+
+
+ln -s $(pwd)/Thunar/ ~/.config/
+ln -s $(pwd)/htop/ ~/.config/
+ln -s $(pwd)/hypr/ ~/.config/
+ln -s $(pwd)/kitty/ ~/.config/
+ln -s $(pwd)/nvim/ ~/.config/
+ln -s $(pwd)/tmux/ ~/.config/
 
 echo "Creating symlinks from Scrips to dotfiles/Scripts"
 
-ln -s ../Scripts/ ~
+ln -s $(pwd)/Scripts/ ~/
+
+echo "Creating symlink to ~/.bashrc"
+
+ln -s $(pwd)/.bashrc ~/
