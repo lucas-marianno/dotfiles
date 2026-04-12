@@ -23,7 +23,7 @@ else
   exit 1
 fi
 
-yay -Syu --noconfirm
+sudo -u $SUDO_USER yay -Syu --noconfirm
 if [ $? -eq 0 ]; then
   echo -e "\n\e[32myay update sucessful!\e[0m\n"
 else

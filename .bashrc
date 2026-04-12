@@ -16,6 +16,7 @@ alias grep='grep --color=auto'
 alias wpp="brave --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm" # runs WhatsApp Web
 
 # .conf
+alias dot.conf='cd ~/git-clones/dotfiles/ && nvim .'
 alias hypr.conf='cd ~/.config/hypr/ && nvim .'
 alias nvim.conf='cd ~/.config/nvim/ && nvim .'
 alias kitty.conf='cd ~/.config/kitty/ && nvim .'
