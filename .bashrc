@@ -8,12 +8,18 @@
 #PS1='[\u@\h \W]\$ '
 PS1="\[\e[1;31m\]\u\[\e[m\]\[\e[1;37m\]@\[\e[m\]\[\e[1;32m\]\h\[\e[m\]\[\e[1;37m\]:\[\e[m\]\[\e[1;34m\]\W\[\e[m\] \[\e[1;37m\]\\$\[\e[m\] "
 
+# Fasd
+# z + fuzzy dir name to quickly go there
+eval "$(fasd --init auto)"
+
+
 # Aliases
 alias ..='cd ..'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 # alias rm="trash"
 alias wpp="brave --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm" # runs WhatsApp Web
+alias vim="nvim --clean "
 
 # .conf
 alias dot.conf='cd ~/git-clones/dotfiles/ && nvim .'
