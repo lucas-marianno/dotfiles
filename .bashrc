@@ -45,7 +45,7 @@ export EDITOR=/bin/nvim
 
 # Scripts
 alias _backupAndUpdate="sudo sh ~/Scripts/backup_update_remove-trash.sh"
-alias _toggle_eDP-1="~/Scripts/toggle_eDP-1.sh"
+alias _toggle_eDP-1="~/.config/hypr/scripts/toggle_eDP-1.sh"
 
 # notes:
 #
