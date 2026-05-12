@@ -24,7 +24,9 @@ AUDIO_MANAGER = "pavucontrol"
 AUDIO_MANAGER = "org.pulseaudio.pavucontrol"
 
 WALLPAPER_MANAGER = "hyprpaper"
-STATUS_BAR = "waybar"
+
+-- STATUS_BAR = "waybar"
+STATUS_BAR = "ashell"
 
 AUTO_MOUNT = "udiskie"
 NOTIFICATION_DAEMON = "dunst"
