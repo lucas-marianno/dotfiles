@@ -9,7 +9,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Core Execution & Window Management
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(TERMINAL))
-hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("[float] " .. TERMINAL))
+hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("[workspace special:special; float] " .. TERMINAL))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(FILE_MANAGER))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pkill " .. MENU .. " || " .. MENU_SHOW))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(WEB_BROWSER))
@@ -91,8 +91,8 @@ for i = 1, 10 do
 end
 
 -- Special workspace
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("special"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:special" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

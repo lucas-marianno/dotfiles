@@ -84,24 +84,6 @@ hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "al
 hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
 hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
 
--- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
--- "Smart gaps" / "No gaps when only"
--- uncomment all if you wish to use that.
--- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
--- hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
--- hl.window_rule({
---     name  = "no-gaps-wtv1",
---     match = { float = false, workspace = "w[tv1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
--- hl.window_rule({
---     name  = "no-gaps-f1",
---     match = { float = false, workspace = "f[1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
-
 hl.config({
 	-- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 	dwindle = {
@@ -115,22 +97,21 @@ hl.config({
 	scrolling = {
 		fullscreen_on_one_column = true,
 	},
-
-	----------------
-	----  MISC  ----
-	----------------
-	-- https://wiki.hypr.land/Configuring/Variables/#misc
-
+	-- https://wiki.hypr.land/Configuring/Basics/Variables/#misc
 	misc = {
 		force_default_wallpaper = 1, -- Set to 0 or 1 to disable the anime mascot wallpapers
 		disable_hyprland_logo = true, -- If true disables the random hyprland logo / anime girl background. :(
+		disable_splash_rendering = true, -- disables the random phrase on wallpaper
+		vrr = 1, -- controls the VRR (Adaptive Sync) of your monitors. 0 - off, 1 - on, 2 - fullscreen only, 3 - fullscreen with video or game content type [0/1/2/3]
+		focus_on_activate = true,
 	},
+	--- https://wiki.hypr.land/Configuring/Basics/Variables/#debug
 	debug = {
 		vfr = true, -- Enables variable refresh rate - reduces re-renders on static screens
 	},
-	-- https://wiki.hypr.land/Configuring/Variables/#ecosystem
+	-- https://wiki.hypr.land/Configuring/Basics/Variables/#ecosystem
 	ecosystem = {
-		no_update_news = true,
+		no_update_news = false,
 		no_donation_nag = true,
 	},
 })

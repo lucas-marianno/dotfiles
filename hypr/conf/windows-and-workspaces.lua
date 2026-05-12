@@ -37,7 +37,7 @@ hl.window_rule({
 	name = "whatsapp-web",
 	match = { title = WPP_TITLE },
 
-	workspace = "special:magic",
+	workspace = "special:special",
 	size = { "monitor_w*0.8", "monitor_h*0.8" },
 })
 
