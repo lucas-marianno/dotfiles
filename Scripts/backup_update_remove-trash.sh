@@ -1,12 +1,12 @@
 #!/bin/bash/
 
-#                   echo -e "\e[CODEmText\e[0m"
+#                     echo -e "\e[CODEmText\e[0m"
 # 30	Black	          echo -e "\e[30mBlack\e[0m"
-# 31	Red	          echo -e "\e[31mRed\e[0m"
+# 31	Red	            echo -e "\e[31mRed\e[0m"
 # 32	Green	          echo -e "\e[32mGreen\e[0m"
-# 33	Yellow	          echo -e "\e[33mYellow\e[0m"
+# 33	Yellow	        echo -e "\e[33mYellow\e[0m"
 # 34	Blue	          echo -e "\e[34mBlue\e[0m"
-# 35	Magenta	          echo -e "\e[35mMagenta\e[0m"
+# 35	Magenta	        echo -e "\e[35mMagenta\e[0m"
 # 36	Cyan	          echo -e "\e[36mCyan\e[0m"
 # 37	White	          echo -e "\e[37mWhite\e[0m"
 
