@@ -9,7 +9,11 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Core Execution & Window Management
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(TERMINAL))
-hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("[workspace special:special; float] " .. TERMINAL))
+-- launches the terminal in the special workspace on float mode with transparent background
+hl.bind(
+	mainMod .. " + SHIFT + RETURN",
+	hl.dsp.exec_cmd("[workspace special:special; float] " .. TERMINAL .. " -o background_opacity=0.74")
+)
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(FILE_MANAGER))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pkill " .. MENU .. " || " .. MENU_SHOW))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(WEB_BROWSER))
