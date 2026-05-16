@@ -1,0 +1,27 @@
+position = "Top"
+
+# See https://malpenzibo.github.io/ashell/docs/configuration/full_config
+# See https://malpenzibo.github.io/ashell/docs/configuration/appearance/general#status-bar-style
+# See https://malpenzibo.github.io/ashell/docs/configuration/appearance/palette
+[appearance]
+style = "Solid"
+opacity = 0
+background_color = "#000000"
+primary_color = "#aaaaaa"
+# secondary_color = "#ff0000"
+# success_color = "#ff0000"
+# danger_color = "#00ff00"
+workspace_colors = [ "#323232", "#ababab" ]
+
+[appearance.menu]
+opacity = 1
+# backdrop = 0.5
+
+
+
+# [appearance.secondary_color] 
+# base = "#aaaaaa"
+# # base = "#7aa2f7"
+# strong = "#ff0000"
+# weak = "#00ff00"
+# text = "#0000ff"
