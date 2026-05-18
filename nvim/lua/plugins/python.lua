@@ -3,14 +3,18 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        pyright = false,
         -- Use BasedPyright for type checking and Intellisense
         basedpyright = {
           settings = {
             basedpyright = {
               analysis = {
                 -- Use Ruff for diagnostics/linting instead
-                ignore = { "*" },
-                typeCheckingMode = "standard",
+                -- ignore = { "*" },
+                typeCheckingMode = "basic", -- basic | standard | strict | none
+                diagnosticSeverityOverrides = {
+                  -- reportUnknownMemberType = "none",
+                },
               },
             },
           },
@@ -24,7 +28,7 @@ return {
                 vim.lsp.buf.code_action({
                   apply = true,
                   context = {
-                    only = { "source.organizeImports.ruff" },
+                    -- only = { "source.organizeImports.ruff" },
                     diagnostics = {},
                   },
                 })

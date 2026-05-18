@@ -6,3 +6,4 @@ vim.opt.scrolloff = 8
 vim.opt.wrap = true
 vim.g.autoformat = false
 vim.g.root_spec = { "cwd" }
+vim.g.lazyvim_python_lsp = "basedpyright"
