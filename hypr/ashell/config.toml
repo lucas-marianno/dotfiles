@@ -7,9 +7,9 @@ log_level = "info"
 position = "Top"
 
 [modules]
-left = [  "Workspaces" ] 
-center = [ "WindowTitle" ]
-right = [ "SystemInfo", "MediaPlayer", [ "Tray", "Tempo", "Privacy", "Settings" ] ]
+left = ["Workspaces"]
+center = ["WindowTitle"]
+right = ["SystemInfo", "MediaPlayer", ["Tray", "Tempo", "Privacy", "Settings"]]
 
 [workspaces]
 visibility_mode = "All"
@@ -26,7 +26,7 @@ mode = "Title"
 truncate_title_after_length = 100
 
 [system_info]
-indicators = [ "Cpu", "Memory", "Temperature" ]
+indicators = ["Cpu", "Memory", "Temperature"]
 interval = 5
 
 [system_info.cpu]
@@ -66,16 +66,26 @@ microphone_indicator_format = "Icon"
 network_indicator_format = "Icon"
 bluetooth_indicator_format = "Icon"
 brightness_indicator_format = "Icon"
-indicators = [ "IdleInhibitor", "PowerProfile", "Audio", "Microphone", "Bluetooth", "Network", "Vpn", "Battery", "Brightness" ]
+indicators = [
+  "IdleInhibitor",
+  "PowerProfile",
+  "Audio",
+  "Microphone",
+  "Bluetooth",
+  "Network",
+  "Vpn",
+  "Battery",
+  "Brightness",
+]
 
 [appearance]
-style = "Gradient"
+style = "Islands" # Gradient |  Solid | Islands
 
 primary_color = "#7aa2f7"
 success_color = "#9ece6a"
 text_color = "#a9b1d6"
-workspace_colors = [ "#9ece6a" , "#7aa2f7" ]
-special_workspace_colors = [ "#9ece6a" , "#7aa2f7" ]
+workspace_colors = ["#7aa2f7", "#9ece6a"]
+special_workspace_colors = ["#7aa2f7", "#9ece6a"]
 
 [appearance.danger_color]
 base = "#f7768e"
@@ -88,4 +98,3 @@ strong = "#414868"
 
 [appearance.secondary_color]
 base = "#0c0d14"
-

@@ -7,7 +7,8 @@ hl.config({
 
 	general = {
 		gaps_in = 5,
-		gaps_out = 10,
+		gaps_out = { top = 0, left = 10, right = 10, bottom = 10 },
+		-- gaps_out = 10,
 
 		border_size = 2,
 
@@ -23,7 +24,7 @@ hl.config({
 
 		layout = "dwindle",
 	},
-  -- https://wiki.hypr.land/Configuring/Basics/Variables/#decoration
+	-- https://wiki.hypr.land/Configuring/Basics/Variables/#decoration
 	decoration = {
 		rounding = 5,
 		rounding_power = 2,
@@ -32,7 +33,7 @@ hl.config({
 		active_opacity = 1.0,
 		inactive_opacity = 1.0,
 
-    -- https://wiki.hypr.land/Configuring/Basics/Variables/#shadow
+		-- https://wiki.hypr.land/Configuring/Basics/Variables/#shadow
 		shadow = {
 			enabled = false,
 			range = 4,
@@ -41,15 +42,15 @@ hl.config({
 		},
 
 		-- https://wiki.hypr.land/Configuring/Basics/Variables/#blur
-    blur = {
+		blur = {
 			popups_ignorealpha = 0,
 
 			enabled = true,
 			size = 8,
 			passes = 1,
 
-      ignore_opacity = false,
-      new_optimizations = true,
+			ignore_opacity = false,
+			new_optimizations = true,
 
 			vibrancy = 0.1696,
 		},
