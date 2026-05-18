@@ -36,4 +36,7 @@ hl.on("hyprland.start", function()
 
 	--  Security
 	hl.exec_cmd(IDDLE_MNGR)
+
+  -- gamma
+  hl.exec_cmd("hyprsunset")
 end)
