@@ -7,6 +7,11 @@
 
 -- Example window rules that are useful
 
+hl.workspace_rule({
+	workspace = "1",
+	monitor = "DP-1",
+})
+
 -------------------
 -- GNOME APPS
 -------------------
