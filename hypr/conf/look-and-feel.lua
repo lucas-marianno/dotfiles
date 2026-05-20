@@ -7,7 +7,8 @@ hl.config({
 
 	general = {
 		gaps_in = 5,
-		gaps_out = 10,
+		gaps_out = { top = 0, left = 10, right = 10, bottom = 10 },
+		-- gaps_out = 10,
 
 		border_size = 2,
 
@@ -45,8 +46,6 @@ hl.config({
 			popups_ignorealpha = 0,
 
 			enabled = true,
-			size = 5,
-			passes = 2,
 			size = 8,
 			passes = 1,
 

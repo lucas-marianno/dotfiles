@@ -10,10 +10,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 -- Core Execution & Window Management
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(TERMINAL))
 -- launches the terminal in the special workspace on float mode with transparent background
-hl.bind(
-	mainMod .. " + SHIFT + RETURN",
-	hl.dsp.exec_cmd("[workspace special:special; float] " .. TERMINAL .. " -o background_opacity=0.74")
-)
+hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("[float] " .. TERMINAL .. " -o background_opacity=0.75"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(FILE_MANAGER))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pkill " .. MENU .. " || " .. MENU_SHOW))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(WEB_BROWSER))
@@ -25,7 +22,7 @@ hl.bind(mainMod .. " + V", hl.dsp.layout("togglesplit"))
 
 -- When a window enters floating mode, resize and center it
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + F", hl.dsp.window.resize({ x = 1000, y = 500 }))
+hl.bind(mainMod .. " + F", hl.dsp.window.resize({ x = 1500, y = 800 }))
 hl.bind(mainMod .. " + F", hl.dsp.window.center())
 
 -- Switch focus from current to previously focused window
@@ -74,16 +71,16 @@ hl.bind(mainMod .. " + CONTROL + down", hl.dsp.window.swap({ direction = "down" 
 hl.bind(mainMod .. " + CONTROL + up", hl.dsp.window.swap({ direction = "up" }))
 hl.bind(mainMod .. " + CONTROL + right", hl.dsp.window.swap({ direction = "right" }))
 
--- Resize using arrows (binde -> repeating = true)
+-- Resize using arrows
 hl.bind(mainMod .. " + ALT + left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + down", hl.dsp.window.resize({ x = 10, y = -10, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + up", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + ALT + up", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + ALT + down", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
 hl.bind(mainMod .. " + ALT + right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
 
--- Resize using hjkl (binde -> repeating = true)
+-- Resize using hjkl
 hl.bind(mainMod .. " + ALT + h", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + j", hl.dsp.window.resize({ x = 10, y = -10, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + k", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + ALT + k", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + ALT + j", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
 hl.bind(mainMod .. " + ALT + l", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
 
 -- Switch workspaces with mainMod + [0-9]
@@ -132,6 +129,17 @@ hl.bind(
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 10%+"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 10%-"), { locked = true, repeating = true })
 
+hl.bind(
+	mainMod .. " + F6",
+	hl.dsp.exec_cmd("hyprctl hyprsunset gamma +10; notify-send 'gamma up'"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	mainMod .. " + F5",
+	hl.dsp.exec_cmd("hyprctl hyprsunset gamma -10; notify-send 'gamma down'"),
+	{ locked = true, repeating = true }
+)
+
 -- Requires playerctl (bindl -> locked = true)
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
@@ -146,13 +154,25 @@ hl.bind(mainMod .. " + SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m region -o ~/
 hl.bind(mainMod .. " + DELETE", hl.dsp.exec_cmd("hyprlock --immediate-render"))
 
 -- On lid close (bindl -> locked = true)
-hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("hyprlock --immediate-render"), { locked = true })
-hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd(TOGGLE_eDP1), { locked = true })
-hl.bind("switch:on:Lid Switch", hl.dsp.exec_cmd("pkill hypridle"), { locked = true })
+hl.bind(
+	"switch:on:Lid Switch",
+	hl.dsp.exec_cmd([[
+hyprlock --immediate-render;
+pkill hypridle;
+hyprctl eval hl.monitor({ output = "eDP-1", disabled = true })
+]]),
+	{ locked = true }
+)
 
 -- On lid open (bindl -> locked = true)
-hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd(TOGGLE_eDP1), { locked = true })
-hl.bind("switch:off:Lid Switch", hl.dsp.exec_cmd("hypridle"), { locked = true })
+hl.bind(
+	"switch:off:Lid Switch",
+	hl.dsp.exec_cmd([[
+  hypridle
+  hyprctl reload
+  ]]),
+	{ locked = true }
+)
 
 -- Desktop toggles
 hl.bind(mainMod .. " + F11", hl.dsp.exec_cmd("pkill " .. STATUS_BAR .. " || " .. STATUS_BAR))

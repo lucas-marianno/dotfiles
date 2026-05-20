@@ -27,7 +27,8 @@ require("maven").setup({
 })
 
 -- vim.lsp.enable("dartls")
-vim.g.lazyvim_python_lsp = "pyright"
+vim.lsp.enable("basedpyright")
+vim.lsp.enable("lua_ls")
 
 -- use PowerShell Core as terminal when executing on windows environments
 if vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 then
