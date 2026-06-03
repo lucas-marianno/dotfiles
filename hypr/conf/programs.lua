@@ -8,9 +8,8 @@
 
 TERMINAL = "kitty"
 FILE_MANAGER = "thunar"
+NOTEPAD = "featherpad"
 
-TERMINAL = "kitty"
-FILE_MANAGER = "thunar"
 CALCULATOR = "gnome-calculator"
 
 MENU = "wofi"

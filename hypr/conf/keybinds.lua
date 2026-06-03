@@ -9,7 +9,6 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Core Execution & Window Management
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(TERMINAL))
--- launches the terminal in the special workspace on float mode with transparent background
 hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("[float] " .. TERMINAL .. " -o background_opacity=0.75"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(FILE_MANAGER))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pkill " .. MENU .. " || " .. MENU_SHOW))
@@ -20,9 +19,15 @@ hl.bind(mainMod .. " + C", hl.dsp.window.center())
 hl.bind(mainMod .. " + W", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + V", hl.dsp.layout("togglesplit"))
 
+-- Text editors
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(NOTEPAD))
+hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("[float] " .. NOTEPAD))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty -d ~/Documents/Notes/ nvim note_$(date +\"%Y-%m-%d_%H:%M:%S\")"))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("[float] kitty -d ~/Documents/Notes/ nvim note_$(date +\"%Y-%m-%d_%H:%M:%S\")"))
+
 -- When a window enters floating mode, resize and center it
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + F", hl.dsp.window.resize({ x = 1500, y = 800 }))
+hl.bind(mainMod .. " + F", hl.dsp.window.resize({ x = 1000, y = 500 }))
 hl.bind(mainMod .. " + F", hl.dsp.window.center())
 
 -- Switch focus from current to previously focused window
