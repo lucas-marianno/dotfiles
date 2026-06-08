@@ -28,7 +28,7 @@ hl.window_rule({
 	name = "whatsapp-web",
 	match = { title = WPP_TITLE },
 
-	workspace = "special:special",
+	workspace = "special:S",
 	size = { "monitor_w*0.8", "monitor_h*0.8" },
 })
 
@@ -141,6 +141,12 @@ hl.window_rule({
 	center = true,
 	size = { "monitor_w*0.5", "monitor_h*0.8" },
 })
+
+-------------------
+-- SPECIAL WORKSPACE
+-------------------
+
+hl.workspace_rule({ workspace = "special:S", gaps_out = 40, gaps_in = 15 })
 
 -------------------
 -- SMART GAPS
