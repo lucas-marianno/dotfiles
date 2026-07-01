@@ -19,7 +19,6 @@ NETWORK_MANAGER = "nm-applet"
 CONNECTION_EDITOR = "nm-connection-editor"
 
 BT_MANAGER = "blueman-manager"
-AUDIO_MANAGER = "pavucontrol"
 AUDIO_MANAGER = "org.pulseaudio.pavucontrol"
 
 WALLPAPER_MANAGER = "hyprpaper"

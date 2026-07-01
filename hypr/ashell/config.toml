@@ -13,7 +13,7 @@ right = ["SystemInfo", "MediaPlayer", ["Tray", "Tempo", "Privacy", "Settings"]]
 
 [workspaces]
 visibility_mode = "All"
-group_by_monitor = true
+group_by_monitor = false
 enable_workspace_filling = false # if true, will display all workspaces whether active or not
 
 # [[CustomModule]]
@@ -40,7 +40,7 @@ alert_threshold = 85
 [system_info.temperature]
 warn_threshold = 60
 alert_threshold = 80
-sensor = "acpitz temp1"
+sensor = "Cpu"
 
 [tempo]
 clock_format = "%a %d %b %R"
