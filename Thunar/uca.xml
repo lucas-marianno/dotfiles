@@ -27,41 +27,36 @@
 </action>
 <action>
 	<icon>stock_folder-move</icon>
-	<name>Extract files</name>
+	<name>Unzip file</name>
 	<submenu></submenu>
 	<unique-id>1759850454739730-3</unique-id>
-	<command>7z e %n -o%n\ \-\ Extracted\ Files</command>
+	<command>unzip %n</command>
 	<description></description>
 	<range>*</range>
 	<patterns>*.zip</patterns>
+	<startup-notify/>
 	<other-files/>
 </action>
 <action>
-	<icon>visual-studio-code</icon>
-	<name>Open Code here</name>
+	<icon>emblem-package</icon>
+	<name>Zip directory</name>
 	<submenu></submenu>
-	<unique-id>1765991194215240-1</unique-id>
-	<command>code %f</command>
+	<unique-id>1781785143105233-1</unique-id>
+	<command>zip -r %n.zip %n</command>
 	<description></description>
 	<range>*</range>
 	<patterns>*</patterns>
 	<directories/>
-	<audio-files/>
-	<image-files/>
-	<other-files/>
-	<text-files/>
-	<video-files/>
 </action>
 <action>
-	<icon></icon>
-	<name>Open Intellij IDEA here</name>
+	<icon>emblem-package</icon>
+	<name>Zip file</name>
 	<submenu></submenu>
-	<unique-id>1765991456983200-2</unique-id>
-	<command>idea %f</command>
+	<unique-id>1781785361877336-2</unique-id>
+	<command>zip %n.zip %n</command>
 	<description></description>
 	<range>*</range>
 	<patterns>*</patterns>
-	<directories/>
 	<audio-files/>
 	<image-files/>
 	<other-files/>
