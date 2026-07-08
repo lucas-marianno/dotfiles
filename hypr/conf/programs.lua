@@ -27,7 +27,7 @@ WALLPAPER_MANAGER = "hyprpaper"
 STATUS_BAR = "ashell"
 
 AUTO_MOUNT = "udiskie"
-NOTIFICATION_DAEMON = "dunst"
+NOTIFICATION_DAEMON = "swaync"
 
 WEB_BROWSER = "brave"
 WEB_BROWSER_CLASS = "brave-browser"
