@@ -37,6 +37,15 @@ hl.on("hyprland.start", function()
 	--  Security
 	hl.exec_cmd(IDDLE_MNGR)
 
-  -- gamma
-  hl.exec_cmd("hyprsunset")
+	-- gamma
+	hl.exec_cmd("hyprsunset")
+
+	-- custom scripts
+	EnableGaps(true)
+	EnableSmartGaps(true)
+end)
+
+hl.on("config.reloaded", function()
+	EnableGaps(GAPS_ENABLED)
+	EnableSmartGaps(SMART_GAPS_ENABLED)
 end)

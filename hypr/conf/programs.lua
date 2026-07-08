@@ -36,4 +36,3 @@ WPP_TITLE = "WhatsApp Web"
 
 IDDLE_MNGR = "hypridle"
 
-TOGGLE_eDP1 = "~/.config/hypr/scripts/toggle_eDP-1.sh"

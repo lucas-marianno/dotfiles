@@ -19,6 +19,14 @@ hl.bind(mainMod .. " + C", hl.dsp.window.center())
 hl.bind(mainMod .. " + W", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + V", hl.dsp.layout("togglesplit"))
 
+-- Custom Functions
+hl.bind(mainMod .. " + G", function()
+	EnableGaps(not GAPS_ENABLED)
+end)
+hl.bind(mainMod .. " + SHIFT + G", function()
+	EnableSmartGaps(not SMART_GAPS_ENABLED)
+end)
+
 -- Text editors
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(NOTEPAD))
 hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("[float] " .. NOTEPAD))
@@ -159,31 +167,27 @@ hl.bind(mainMod .. " + SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m region -o ~/
 hl.bind(mainMod .. " + DELETE", hl.dsp.exec_cmd("hyprlock --immediate-render"))
 
 -- On lid close (bindl -> locked = true)
-hl.bind(
-	"switch:on:Lid Switch",
-	hl.dsp.exec_cmd([[
-hyprlock --immediate-render;
-pkill hypridle;
-]]),
-	{ locked = true }
-)
+hl.bind("switch:on:Lid Switch", function()
+	hl.exec_cmd("hyprlock --immediate-render")
+	hl.exec_cmd("pkill hypridle")
+	Enable_eDP1(false)
+end, { locked = true })
 
 -- On lid open (bindl -> locked = true)
-hl.bind(
-	"switch:off:Lid Switch",
-	hl.dsp.exec_cmd([[
-  hypridle
-  hyprctl reload
-  ]]),
-	{ locked = true }
-)
+hl.bind("switch:off:Lid Switch", function()
+	hl.exec_cmd("hypridle")
+
+	Enable_eDP1(true)
+end, { locked = true })
 
 -- Desktop toggles
 hl.bind(mainMod .. " + F11", hl.dsp.exec_cmd("pkill " .. STATUS_BAR .. " || " .. STATUS_BAR))
 hl.bind(mainMod .. " + F12", hl.dsp.exec_cmd("pkill " .. WALLPAPER_MANAGER .. " || " .. WALLPAPER_MANAGER))
 
 -- Toggle eDP-1 monitor (bindl -> locked = true)
-hl.bind(mainMod .. " + SHIFT + DELETE", hl.dsp.exec_cmd(TOGGLE_eDP1), { locked = true })
+hl.bind(mainMod .. " + SHIFT + DELETE", function()
+	Enable_eDP1(not EDP1_ENABLED)
+end, { locked = true })
 
 -- Useful for ThinkPad layout keyboard
 hl.bind("Print", hl.dsp.exec_cmd("wtype -k Menu"))

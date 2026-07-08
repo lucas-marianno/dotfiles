@@ -6,10 +6,6 @@
 hl.config({
 
 	general = {
-		gaps_in = 5,
-		gaps_out = { top = 0, left = 10, right = 10, bottom = 10 },
-		-- gaps_out = 10,
-
 		border_size = 2,
 
 		col = {
@@ -26,8 +22,8 @@ hl.config({
 	},
 	-- https://wiki.hypr.land/Configuring/Basics/Variables/#decoration
 	decoration = {
-		rounding = 5,
-		rounding_power = 2,
+    -- Border rounding
+    rounding_power = 2,
 
 		-- Change transparency of focused and unfocused windows
 		active_opacity = 1.0,
