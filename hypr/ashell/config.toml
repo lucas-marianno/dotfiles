@@ -2,9 +2,12 @@
 # See https://malpenzibo.github.io/ashell/docs/configuration/appearance/general#status-bar-style
 # See https://malpenzibo.github.io/ashell/docs/configuration/appearance/palette
 
-log_level = "info"
+log_level = "warn"
 #outputs = { Targets = ["eDP-1"] }
 position = "Top"
+layer = "Bottom" # "Overlay" | "Top" | "Bottom"
+
+enable_esc_key = true
 
 [modules]
 left = ["Workspaces"]
@@ -13,7 +16,7 @@ right = ["SystemInfo", "MediaPlayer", ["Tray", "Tempo", "Privacy", "Settings"]]
 
 [workspaces]
 visibility_mode = "All"
-group_by_monitor = true
+group_by_monitor = false
 enable_workspace_filling = false # if true, will display all workspaces whether active or not
 
 # [[CustomModule]]
@@ -40,7 +43,7 @@ alert_threshold = 85
 [system_info.temperature]
 warn_threshold = 60
 alert_threshold = 80
-sensor = "acpitz temp1"
+sensor = "Cpu"
 
 [tempo]
 clock_format = "%a %d %b %R"
@@ -56,7 +59,7 @@ weather_indicator = "IconAndTemperature"
 lock_cmd = "hyprlock &"
 audio_sinks_more_cmd = "pavucontrol -t 3"
 audio_sources_more_cmd = "pavucontrol -t 4"
-wifi_more_cmd = "nm-connection-editor"
+wifi_more_cmd = "networkmanager_dmenu"
 vpn_more_cmd = "nm-connection-editor"
 bluetooth_more_cmd = "blueman-manager"
 battery_format = "IconAndPercentage"
@@ -79,20 +82,22 @@ indicators = [
 ]
 
 [appearance]
-style = "Islands" # Gradient |  Solid | Islands
+style = "Solid" # Gradient |  Solid | Islands
 
 primary_color = "#7aa2f7"
 success_color = "#9ece6a"
 text_color = "#a9b1d6"
-workspace_colors = ["#7aa2f7", "#9ece6a"]
-special_workspace_colors = ["#7aa2f7", "#9ece6a"]
+workspace_colors = ["#7aa2f7", "#af8fff"]
+# special_workspace_colors = ["#7aa2f7", "#9ece6a"]
+special_workspace_colors = ["#FFC107", "#FFC107"]
 
 [appearance.danger_color]
 base = "#f7768e"
 weak = "#e0af68"
 
 [appearance.background_color]
-base = "#1a1b26"
+base = "#1e1e2f"
+# base = '#000000'
 weak = "#24273a"
 strong = "#414868"
 

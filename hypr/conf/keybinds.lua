@@ -9,7 +9,6 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Core Execution & Window Management
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(TERMINAL))
--- launches the terminal in the special workspace on float mode with transparent background
 hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("[float] " .. TERMINAL .. " -o background_opacity=0.75"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(FILE_MANAGER))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pkill " .. MENU .. " || " .. MENU_SHOW))
@@ -20,9 +19,23 @@ hl.bind(mainMod .. " + C", hl.dsp.window.center())
 hl.bind(mainMod .. " + W", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + V", hl.dsp.layout("togglesplit"))
 
+-- Custom Functions
+hl.bind(mainMod .. " + G", function()
+	EnableGaps(not GAPS_ENABLED)
+end)
+hl.bind(mainMod .. " + SHIFT + G", function()
+	EnableSmartGaps(not SMART_GAPS_ENABLED)
+end)
+
+-- Text editors
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(NOTEPAD))
+hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("[float] " .. NOTEPAD))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty -d ~/Documents/Notes/ nvim note_$(date +\"%Y-%m-%d_%H:%M:%S\")"))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("[float] kitty -d ~/Documents/Notes/ nvim note_$(date +\"%Y-%m-%d_%H:%M:%S\")"))
+
 -- When a window enters floating mode, resize and center it
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + F", hl.dsp.window.resize({ x = 1500, y = 800 }))
+hl.bind(mainMod .. " + F", hl.dsp.window.resize({ x = 1000, y = 500 }))
 hl.bind(mainMod .. " + F", hl.dsp.window.center())
 
 -- Switch focus from current to previously focused window
@@ -92,8 +105,8 @@ for i = 1, 10 do
 end
 
 -- Special workspace
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("special"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:special" }))
+hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("S"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:S" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
@@ -154,32 +167,27 @@ hl.bind(mainMod .. " + SHIFT + Print", hl.dsp.exec_cmd("hyprshot -m region -o ~/
 hl.bind(mainMod .. " + DELETE", hl.dsp.exec_cmd("hyprlock --immediate-render"))
 
 -- On lid close (bindl -> locked = true)
-hl.bind(
-	"switch:on:Lid Switch",
-	hl.dsp.exec_cmd([[
-hyprlock --immediate-render;
-pkill hypridle;
-hyprctl eval hl.monitor({ output = "eDP-1", disabled = true })
-]]),
-	{ locked = true }
-)
+hl.bind("switch:on:Lid Switch", function()
+	hl.exec_cmd("hyprlock --immediate-render")
+	hl.exec_cmd("pkill hypridle")
+	Enable_eDP1(false)
+end, { locked = true })
 
 -- On lid open (bindl -> locked = true)
-hl.bind(
-	"switch:off:Lid Switch",
-	hl.dsp.exec_cmd([[
-  hypridle
-  hyprctl reload
-  ]]),
-	{ locked = true }
-)
+hl.bind("switch:off:Lid Switch", function()
+	hl.exec_cmd("hypridle")
+
+	Enable_eDP1(true)
+end, { locked = true })
 
 -- Desktop toggles
 hl.bind(mainMod .. " + F11", hl.dsp.exec_cmd("pkill " .. STATUS_BAR .. " || " .. STATUS_BAR))
 hl.bind(mainMod .. " + F12", hl.dsp.exec_cmd("pkill " .. WALLPAPER_MANAGER .. " || " .. WALLPAPER_MANAGER))
 
 -- Toggle eDP-1 monitor (bindl -> locked = true)
-hl.bind(mainMod .. " + SHIFT + DELETE", hl.dsp.exec_cmd(TOGGLE_eDP1), { locked = true })
+hl.bind(mainMod .. " + SHIFT + DELETE", function()
+	Enable_eDP1(not EDP1_ENABLED)
+end, { locked = true })
 
 -- Useful for ThinkPad layout keyboard
 hl.bind("Print", hl.dsp.exec_cmd("wtype -k Menu"))

@@ -3,15 +3,16 @@ require("config.lazy")
 
 require("vscode").setup({
   -- Override colors ->https://github.com/Mofiqul/vscode.nvim/blob/main/lua/vscode/colors.lua
-  color_overrides = {
-    vscBack = "#000000",
-    pvscTabCurrent = "#000000",
-    vscPopupBack = "#000000",
-    -- vscPopupFront = "#FF0000",
-  },
+  -- color_overrides = {
+  --   vscBack = "#000000",
+  --   pvscTabCurrent = "#000000",
+  --   vscPopupBack = "#000000",
+  --   -- vscPopupFront = "#FF0000",
+  -- },
 })
 
-require("vscode").load()
+-- require("vscode").load()
+require("catppuccin").load("mocha")
 
 require("lazydev").setup({
   library = { "nvim-dap-ui" },

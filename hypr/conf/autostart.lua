@@ -16,7 +16,7 @@
 hl.on("hyprland.start", function()
 	hl.exec_cmd("/usr/lib/pam_kwallet_init")
 	hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
-	hl.exec_cmd("sr/bin/xdg-desktop-portal-hyprland")
+	hl.exec_cmd("/usr/bin/xdg-desktop-portal-hyprland")
 
 	-- Basic functionality
 	hl.exec_cmd(NOTIFICATION_DAEMON)
@@ -37,6 +37,15 @@ hl.on("hyprland.start", function()
 	--  Security
 	hl.exec_cmd(IDDLE_MNGR)
 
-  -- gamma
-  hl.exec_cmd("hyprsunset")
+	-- gamma
+	hl.exec_cmd("hyprsunset")
+
+	-- custom scripts
+	EnableGaps(true)
+	EnableSmartGaps(true)
+end)
+
+hl.on("config.reloaded", function()
+	EnableGaps(GAPS_ENABLED)
+	EnableSmartGaps(SMART_GAPS_ENABLED)
 end)

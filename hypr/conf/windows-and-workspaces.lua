@@ -33,7 +33,7 @@ hl.window_rule({
 	name = "whatsapp-web",
 	match = { title = WPP_TITLE },
 
-	workspace = "special:special",
+	workspace = "special:S",
 	size = { "monitor_w*0.8", "monitor_h*0.8" },
 })
 
@@ -146,20 +146,6 @@ hl.window_rule({
 	center = true,
 	size = { "monitor_w*0.5", "monitor_h*0.8" },
 })
-
--------------------
--- SMART GAPS
--------------------
-local enable_smart_gaps = false
-
-if enable_smart_gaps then
-	hl.workspace_rule({ workspace = "w[tv1]s[false]", gaps_out = 0, gaps_in = 0 })
-	hl.workspace_rule({ workspace = "f[1]s[false]", gaps_out = 0, gaps_in = 0 })
-	hl.window_rule({ match = { float = false, workspace = "w[tv1]s[false]" }, border_size = 0 })
-	hl.window_rule({ match = { float = false, workspace = "w[tv1]s[false]" }, rounding = 0 })
-	hl.window_rule({ match = { float = false, workspace = "f[1]s[false]" }, border_size = 0 })
-	hl.window_rule({ match = { float = false, workspace = "f[1]s[false]" }, rounding = 0 })
-end
 
 -------------------
 -- SUPPRESS MAXIMIZE

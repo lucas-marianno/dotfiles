@@ -8,9 +8,8 @@
 
 TERMINAL = "kitty"
 FILE_MANAGER = "thunar"
+NOTEPAD = "featherpad"
 
-TERMINAL = "kitty"
-FILE_MANAGER = "thunar"
 CALCULATOR = "gnome-calculator"
 
 MENU = "wofi"
@@ -20,7 +19,6 @@ NETWORK_MANAGER = "nm-applet"
 CONNECTION_EDITOR = "nm-connection-editor"
 
 BT_MANAGER = "blueman-manager"
-AUDIO_MANAGER = "pavucontrol"
 AUDIO_MANAGER = "org.pulseaudio.pavucontrol"
 
 WALLPAPER_MANAGER = "hyprpaper"
@@ -29,7 +27,7 @@ WALLPAPER_MANAGER = "hyprpaper"
 STATUS_BAR = "ashell"
 
 AUTO_MOUNT = "udiskie"
-NOTIFICATION_DAEMON = "dunst"
+NOTIFICATION_DAEMON = "swaync"
 
 WEB_BROWSER = "brave"
 WEB_BROWSER_CLASS = "brave-browser"
@@ -38,4 +36,3 @@ WPP_TITLE = "WhatsApp Web"
 
 IDDLE_MNGR = "hypridle"
 
-TOGGLE_eDP1 = "~/.config/hypr/scripts/toggle_eDP-1.sh"
