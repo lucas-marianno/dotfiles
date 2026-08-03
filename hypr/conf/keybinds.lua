@@ -170,14 +170,14 @@ hl.bind(mainMod .. " + DELETE", hl.dsp.exec_cmd("hyprlock --immediate-render"))
 hl.bind("switch:on:Lid Switch", function()
 	hl.exec_cmd("hyprlock --immediate-render")
 	hl.exec_cmd("pkill hypridle")
-	Enable_eDP1(false)
+  -- Enable_eDP1(false)
 end, { locked = true })
 
 -- On lid open (bindl -> locked = true)
 hl.bind("switch:off:Lid Switch", function()
 	hl.exec_cmd("hypridle")
 
-	Enable_eDP1(true)
+	-- Enable_eDP1(true)
 end, { locked = true })
 
 -- Desktop toggles
