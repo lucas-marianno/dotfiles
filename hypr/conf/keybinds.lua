@@ -35,7 +35,7 @@ hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("[float] kitty -d ~/Documents
 
 -- When a window enters floating mode, resize and center it
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + F", hl.dsp.window.resize({ x = 1000, y = 500 }))
+hl.bind(mainMod .. " + F", hl.dsp.window.resize({ x = 1500, y = 800 }))
 hl.bind(mainMod .. " + F", hl.dsp.window.center())
 
 -- Switch focus from current to previously focused window
@@ -188,6 +188,8 @@ hl.bind(mainMod .. " + F12", hl.dsp.exec_cmd("pkill " .. WALLPAPER_MANAGER .. " 
 hl.bind(mainMod .. " + SHIFT + DELETE", function()
 	Enable_eDP1(not EDP1_ENABLED)
 end, { locked = true })
+
+hl.bind(mainMod .. " + SHIFT + ESCAPE", hl.dsp.exec_cmd("[float] kitty btop"))
 
 -- Useful for ThinkPad layout keyboard
 hl.bind("Print", hl.dsp.exec_cmd("wtype -k Menu"))

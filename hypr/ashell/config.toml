@@ -81,8 +81,8 @@ indicators = [
   "Brightness",
 ]
 
-[appearance]
-style = "Solid" # Gradient |  Solid | Islands
+[appearance.bar]
+surface = "solid" # solit | transparent
 
 primary_color = "#7aa2f7"
 success_color = "#9ece6a"
