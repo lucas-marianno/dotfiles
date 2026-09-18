@@ -50,3 +50,10 @@ alias _toggle_eDP-1="~/.config/hypr/scripts/toggle_eDP-1.sh"
 # notes:
 #
 # run archlinux-java to set a specific JDK as the default
+
+# uv
+export PATH="/home/lucas/.local/bin:$PATH"
+
+# Claude Code
+alias claude-v4='sh ~/.claude/.deepseek-v4.sh'
+alias claude-local='sh ~/.claude/.ollama-local.sh'
