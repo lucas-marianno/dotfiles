@@ -12,14 +12,14 @@ PS1="\[\e[1;31m\]\u\[\e[m\]\[\e[1;37m\]@\[\e[m\]\[\e[1;32m\]\h\[\e[m\]\[\e[1;37m
 # z + fuzzy dir name to quickly go there
 eval "$(fasd --init auto)"
 
-
 # Aliases
+alias open='xdg-open '
+alias cls='clear'
 alias ..='cd ..'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-# alias rm="trash"
 alias wpp="brave --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm" # runs WhatsApp Web
-alias vim="nvim --clean "
+alias sz="du -lhad 1 | sort -h" # -l list -h human-readable -a all -d depth
 
 # .conf
 alias dot.conf='cd ~/git-clones/dotfiles/ && nvim .'
