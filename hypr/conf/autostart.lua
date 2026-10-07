@@ -26,7 +26,7 @@ hl.on("hyprland.start", function()
 	-- Style
 	hl.exec_cmd(STATUS_BAR)
 	hl.exec_cmd(WALLPAPER_MANAGER)
-	-- hl.exec_cmd( gsettings set org.gnome.desktop.interface color-scheme "prefer-dark")
+	hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
 
 	-- Authentication
 	hl.exec_cmd("systemctl --user import-environment PATH")

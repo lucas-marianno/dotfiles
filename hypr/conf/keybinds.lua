@@ -35,7 +35,7 @@ hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("[float] kitty -d ~/Documents
 
 -- When a window enters floating mode, resize and center it
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + F", hl.dsp.window.resize({ x = 1000, y = 500 }))
+hl.bind(mainMod .. " + F", hl.dsp.window.resize({ x = 1500, y = 800 }))
 hl.bind(mainMod .. " + F", hl.dsp.window.center())
 
 -- Switch focus from current to previously focused window
@@ -183,6 +183,9 @@ end, { locked = true })
 -- Desktop toggles
 hl.bind(mainMod .. " + F11", hl.dsp.exec_cmd("pkill " .. STATUS_BAR .. " || " .. STATUS_BAR))
 hl.bind(mainMod .. " + F12", hl.dsp.exec_cmd("pkill " .. WALLPAPER_MANAGER .. " || " .. WALLPAPER_MANAGER))
+
+-- Btop
+hl.bind(mainMod .. " + SHIFT + ESCAPE", hl.dsp.exec_cmd("[float] kitty btop"))
 
 -- Toggle eDP-1 monitor (bindl -> locked = true)
 hl.bind(mainMod .. " + SHIFT + DELETE", function()

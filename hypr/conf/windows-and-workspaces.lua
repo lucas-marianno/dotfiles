@@ -45,11 +45,12 @@ hl.window_rule({
 
 hl.window_rule({
 	name = "chromium-floating",
-	match = { class = "chromium" },
+	match = { class = "chromium-browser" },
 
-	float = true,
-	center = true,
-	size = { "monitor_w*0.5", "monitor_h*0.8" },
+	workspace = "special:S",
+	-- float = true,
+	-- center = true,
+  --	size = { "monitor_w*0.5", "monitor_h*0.8" },
 })
 
 -------------------
