@@ -18,14 +18,30 @@ function EnableGaps(boolean)
 
 	if GAPS_ENABLED then
 		hl.config({
-			general = { gaps_in = gaps_in, gaps_out = gaps_out, border_size = border_size },
+			general = {
+				gaps_in = gaps_in,
+				gaps_out = gaps_out,
+
+				col = {
+					active_border = { colors = { "rgba(575d95ee)", "rgba(333a80ee)" }, angle = 45 },
+					inactive_border = "rgba(595959aa)",
+				},
+			},
 			decoration = { rounding = rounding },
 		})
 
 		hl.workspace_rule({ workspace = "special:S", gaps_out = gaps_out_special, gaps_in = gaps_in_special })
 	else
 		hl.config({
-			general = { gaps_in = 0, gaps_out = 0, border_size = 0 },
+			general = {
+				gaps_in = 0,
+				gaps_out = 0,
+
+				col = {
+					active_border = { colors = { "rgba(575d95ff)", "rgba(333a80ff)" }, angle = 45 },
+					inactive_border = "rgba(000000ff)",
+				},
+			},
 			decoration = { rounding = 0 },
 		})
 		hl.workspace_rule({ workspace = "special:S", gaps_out = 10, gaps_in = 0 })

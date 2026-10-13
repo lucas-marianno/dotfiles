@@ -8,10 +8,11 @@ hl.config({
 	general = {
 		border_size = 2,
 
-		col = {
-			active_border = { colors = { "rgba(575d95ee)", "rgba(333a80ee)" }, angle = 45 },
-			inactive_border = "rgba(595959aa)",
-		},
+    -- -- This config is dinamically set in ./gaps.lua
+		-- col = {
+		-- 	active_border = { colors = { "rgba(575d95ee)", "rgba(333a80ee)" }, angle = 45 },
+		-- 	inactive_border = "rgba(595959aa)",
+		-- },
 		-- Set to true enable resizing windows by clicking and dragging on borders and gaps
 		resize_on_border = false,
 

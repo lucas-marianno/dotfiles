@@ -50,7 +50,7 @@ hl.window_rule({
 	workspace = "special:S",
 	-- float = true,
 	-- center = true,
-  --	size = { "monitor_w*0.5", "monitor_h*0.8" },
+	--	size = { "monitor_w*0.5", "monitor_h*0.8" },
 })
 
 -------------------
@@ -85,7 +85,7 @@ hl.window_rule({
 
 hl.window_rule({
 	name = "file-manager",
-	match = { class = FILE_MANAGER },
+	match = { class = "(?i).*" .. FILE_MANAGER },
 
 	float = true,
 	center = true,
