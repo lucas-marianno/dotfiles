@@ -7,7 +7,7 @@
 -- Set programs that you use
 
 TERMINAL = "kitty"
-FILE_MANAGER = "thunar"
+FILE_MANAGER = "dolphin"
 NOTEPAD = "featherpad"
 
 CALCULATOR = "gnome-calculator"
@@ -23,8 +23,8 @@ AUDIO_MANAGER = "org.pulseaudio.pavucontrol"
 
 WALLPAPER_MANAGER = "hyprpaper"
 
--- STATUS_BAR = "waybar"
-STATUS_BAR = "ashell"
+STATUS_BAR = "waybar"
+-- STATUS_BAR = "ashell"
 
 AUTO_MOUNT = "udiskie"
 NOTIFICATION_DAEMON = "swaync"
