@@ -30,8 +30,8 @@ end)
 -- Text editors
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(NOTEPAD))
 hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("[float] " .. NOTEPAD))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty -d ~/Documents/Notes/ nvim note_$(date +\"%Y-%m-%d_%H:%M:%S\")"))
-hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("[float] kitty -d ~/Documents/Notes/ nvim note_$(date +\"%Y-%m-%d_%H:%M:%S\")"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty -d ~/Documents/Notes/ nvim note_$(date +\"%Y-%m-%d_%H:%M:%S\").md"))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("[float] kitty -d ~/Documents/Notes/ nvim note_$(date +\"%Y-%m-%d_%H:%M:%S\").md"))
 
 -- When a window enters floating mode, resize and center it
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
