@@ -2,15 +2,21 @@
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
--- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
-
+-- https://wiki.hypr.land/Configuring/core/rules/Window-Rules/
+-- https://wiki.hypr.land/configuring/core/rules/workspace-rules/
 -- Example window rules that are useful
 
-hl.workspace_rule({
-	workspace = "1",
-	monitor = "DP-1",
-})
+--- Hardcoded values so that odd workspaces are on the left, and even on the right
+hl.workspace_rule({ workspace = "1", monitor = LEFT_MONITOR })
+hl.workspace_rule({ workspace = "3", monitor = LEFT_MONITOR })
+hl.workspace_rule({ workspace = "5", monitor = LEFT_MONITOR })
+hl.workspace_rule({ workspace = "7", monitor = LEFT_MONITOR })
+hl.workspace_rule({ workspace = "9", monitor = LEFT_MONITOR })
+hl.workspace_rule({ workspace = "2", monitor = RIGHT_MONITOR })
+hl.workspace_rule({ workspace = "4", monitor = RIGHT_MONITOR })
+hl.workspace_rule({ workspace = "6", monitor = RIGHT_MONITOR })
+hl.workspace_rule({ workspace = "8", monitor = RIGHT_MONITOR })
+hl.workspace_rule({ workspace = "10", monitor = RIGHT_MONITOR })
 
 -------------------
 -- GNOME APPS
