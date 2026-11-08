@@ -77,7 +77,7 @@ hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
 
 -- Swap active workspaces
-hl.bind(mainMod .. " + CONTROL + TAB", hl.dsp.workspace.swap_monitors({ monitor1 = "HDMI-A-1", monitor2 = "eDP-1" }))
+hl.bind(mainMod .. " + CONTROL + TAB", hl.dsp.workspace.swap_monitors({ monitor1 = RIGHT_MONITOR, monitor2 = LEFT_MONITOR }))
 
 -- Swap window with mainMod + hjkl
 hl.bind(mainMod .. " + CONTROL + H", hl.dsp.window.swap({ direction = "left" }))
@@ -191,9 +191,8 @@ end, { locked = true })
 hl.bind(mainMod .. " + F11", hl.dsp.exec_cmd("pkill " .. STATUS_BAR .. " || " .. STATUS_BAR))
 hl.bind(mainMod .. " + F12", hl.dsp.exec_cmd("pkill " .. WALLPAPER_MANAGER .. " || " .. WALLPAPER_MANAGER))
 
--- Toggle eDP-1 monitor (bindl -> locked = true)
 hl.bind(mainMod .. " + SHIFT + DELETE", function()
-	Enable_eDP1(not EDP1_ENABLED)
+	EnableLeftMonitor(not LEFT_MONITOR_ENABLED)
 end, { locked = true })
 
 hl.bind(mainMod .. " + SHIFT + ESCAPE", hl.dsp.exec_cmd("[float] kitty btop"))
