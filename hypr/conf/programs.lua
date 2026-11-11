@@ -36,3 +36,10 @@ WPP_TITLE = "WhatsApp Web"
 
 IDDLE_MNGR = "hypridle"
 
+-- Gaps
+GAPS_ENABLED = true
+SMART_GAPS_ENABLED = false
+
+-- Monitor
+EDP1_ENABLED = true
+

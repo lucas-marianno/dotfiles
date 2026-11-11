@@ -7,8 +7,6 @@
 -- To list all available monitors (active and inactive):
 -- `hyprctl monitors all`
 
-EDP1_ENABLED = true
-
 hl.monitor({
 	output = "eDP-1",
 	mode = "1920x1080@60",
