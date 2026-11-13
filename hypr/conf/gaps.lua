@@ -1,6 +1,3 @@
-GAPS_ENABLED = true
-SMART_GAPS_ENABLED = true
-
 local gaps_in <const> = 5
 local gaps_out <const> = { top = 10, left = 10, right = 10, bottom = 10 }
 local gaps_in_special <const> = 15

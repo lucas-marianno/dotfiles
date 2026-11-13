@@ -41,8 +41,8 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprsunset")
 
 	-- custom scripts
-	EnableGaps(true)
-	EnableSmartGaps(true)
+	EnableGaps(GAPS_ENABLED)
+	EnableSmartGaps(SMART_GAPS_ENABLED)
 end)
 
 hl.on("config.reloaded", function()

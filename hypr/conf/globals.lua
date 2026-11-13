@@ -1,13 +1,8 @@
 -- See https://wiki.hypr.land/Configuring/Keywords/
 
----------------------
----- MY PROGRAMS ----
----------------------
-
--- Set programs that you use
-
+-- PROGRAMS
 TERMINAL = "kitty"
-FILE_MANAGER = "dolphin"
+FILE_MANAGER = "thunar"
 NOTEPAD = "featherpad"
 
 CALCULATOR = "gnome-calculator"
@@ -23,8 +18,8 @@ AUDIO_MANAGER = "org.pulseaudio.pavucontrol"
 
 WALLPAPER_MANAGER = "hyprpaper"
 
-STATUS_BAR = "waybar"
--- STATUS_BAR = "ashell"
+-- STATUS_BAR = "waybar"
+STATUS_BAR = "ashell"
 
 AUTO_MOUNT = "udiskie"
 NOTIFICATION_DAEMON = "swaync"
@@ -36,3 +31,12 @@ WPP_TITLE = "WhatsApp Web"
 
 IDDLE_MNGR = "hypridle"
 
+-- MONITORS
+LEFT_MONITOR_ENABLED = true
+
+LEFT_MONITOR = "DP-1"
+RIGHT_MONITOR = "HDMI-A-1"
+
+-- GAPS
+GAPS_ENABLED = true
+SMART_GAPS_ENABLED = false

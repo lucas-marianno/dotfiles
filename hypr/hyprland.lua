@@ -9,7 +9,7 @@
 -- Create your files separately and then require them like this:
 -- require("myColors")
 
-require("conf/programs")
+require("conf/globals")
 require("conf/autostart")
 require("conf/env-vars")
 require("conf/input")

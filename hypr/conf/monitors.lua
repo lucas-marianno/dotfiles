@@ -7,11 +7,6 @@
 -- To list all available monitors (active and inactive):
 -- `hyprctl monitors all`
 
-LEFT_MONITOR_ENABLED = true
-
-LEFT_MONITOR = "DP-1"
-RIGHT_MONITOR = "HDMI-A-1"
-
 hl.monitor({
 	output = LEFT_MONITOR,
 	mode = "1920x1080@165",
