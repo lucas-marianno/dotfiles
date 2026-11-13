@@ -93,7 +93,7 @@ workspace_colors = ["#7aa2f7", "#af8fff"]
 special_workspace_colors = ["#FFC107", "#FFC107"]
 
 [appearance.bar]
-surface = "solid" # solit | transparent
+surface = "transparent" # solit | transparent
 
 [appearance.danger_color]
 base = "#f7768e"
