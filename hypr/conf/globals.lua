@@ -1,11 +1,6 @@
 -- See https://wiki.hypr.land/Configuring/Keywords/
 
----------------------
----- MY PROGRAMS ----
----------------------
-
--- Set programs that you use
-
+-- PROGRAMS
 TERMINAL = "kitty"
 FILE_MANAGER = "thunar"
 NOTEPAD = "featherpad"
@@ -36,10 +31,12 @@ WPP_TITLE = "WhatsApp Web"
 
 IDDLE_MNGR = "hypridle"
 
--- Gaps
+-- MONITORS
+LEFT_MONITOR_ENABLED = true
+
+LEFT_MONITOR = "eDP-1"
+RIGHT_MONITOR = "HDMI-A-1"
+
+-- GAPS
 GAPS_ENABLED = true
 SMART_GAPS_ENABLED = false
-
--- Monitor
-EDP1_ENABLED = true
-

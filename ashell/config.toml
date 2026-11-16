@@ -2,15 +2,15 @@
 # See https://malpenzibo.github.io/ashell/docs/configuration/appearance/general#status-bar-style
 # See https://malpenzibo.github.io/ashell/docs/configuration/appearance/palette
 
-[logging]
-level = "debug"
-target = "stdout"
-
 #outputs = { Targets = ["eDP-1"] }
 position = "Top"
 layer = "Bottom" # "Overlay" | "Top" | "Bottom"
 
 enable_esc_key = true
+
+[logging]
+level = "warn"
+target = "stdout"
 
 [modules]
 left = ["Workspaces"]
@@ -84,16 +84,15 @@ indicators = [
   "Brightness",
 ]
 
-[appearance.bar]
-surface = "solid" # solid | transparent
-
-
 primary_color = "#7aa2f7"
 success_color = "#9ece6a"
 text_color = "#a9b1d6"
 workspace_colors = ["#7aa2f7", "#af8fff"]
 # special_workspace_colors = ["#7aa2f7", "#9ece6a"]
 special_workspace_colors = ["#FFC107", "#FFC107"]
+
+[appearance.bar]
+surface = "transparent" # solit | transparent
 
 [appearance.danger_color]
 base = "#f7768e"
@@ -104,6 +103,3 @@ weak = "#e0af68"
 base = '#000000'
 weak = "#24273a"
 strong = "#414868"
-
-[appearance.secondary_color]
-base = "#0c0d14"

@@ -8,25 +8,25 @@
 -- `hyprctl monitors all`
 
 hl.monitor({
-	output = "eDP-1",
+	output = LEFT_MONITOR,
 	mode = "1920x1080@60",
 	position = "auto-left",
 	scale = "1",
 })
 hl.monitor({
-	output = "HDMI-A-1",
+	output = RIGHT_MONITOR,
 	mode = "1920x1080@60",
 	position = "auto-right",
 	scale = "1",
 })
 
-function Enable_eDP1(boolean)
+function EnableLeftMonitor(boolean)
 	if type(boolean) ~= "boolean" then
 		boolean = true
 	end
 
-	EDP1_ENABLED = boolean
+	LEFT_MONITOR_ENABLED = boolean
 
-	hl.monitor({ output = "eDP-1", disabled = not EDP1_ENABLED })
-	hl.exec_cmd("notify-send 'Monitor eDP-1 " .. (EDP1_ENABLED and "enabled" or "disabled") .. "'")
+	hl.monitor({ output = LEFT_MONITOR, disabled = not LEFT_MONITOR_ENABLED })
+	hl.exec_cmd("notify-send 'Monitor " .. LEFT_MONITOR .."'" .. (LEFT_MONITOR_ENABLED and "enabled" or "disabled") .. "'")
 end

@@ -5,7 +5,14 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Binds/
 -- See https://wiki.hypr.land/Configuring/Basics/Dispatchers/
 
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+local mainMod = "SUPER" -- Sets "LGui" key as main modifier
+local altKey = "ALT"
+
+local swapAltGui = false
+
+if swapAltGui then
+  mainMod, altKey = altKey, mainMod
+end
 
 -- Core Execution & Window Management
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(TERMINAL))
@@ -30,8 +37,8 @@ end)
 -- Text editors
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(NOTEPAD))
 hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd("[float] " .. NOTEPAD))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty -d ~/Documents/Notes/ nvim note_$(date +\"%Y-%m-%d_%H:%M:%S\")"))
-hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("[float] kitty -d ~/Documents/Notes/ nvim note_$(date +\"%Y-%m-%d_%H:%M:%S\")"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty -d ~/Documents/Notes/ nvim note_$(date +\"%Y-%m-%d_%H:%M:%S\").md"))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("[float] kitty -d ~/Documents/Notes/ nvim note_$(date +\"%Y-%m-%d_%H:%M:%S\").md"))
 
 -- When a window enters floating mode, resize and center it
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
@@ -70,7 +77,7 @@ hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
 
 -- Swap active workspaces
-hl.bind(mainMod .. " + CONTROL + TAB", hl.dsp.workspace.swap_monitors({ monitor1 = "HDMI-A-1", monitor2 = "eDP-1" }))
+hl.bind(mainMod .. " + CONTROL + TAB", hl.dsp.workspace.swap_monitors({ monitor1 = RIGHT_MONITOR, monitor2 = LEFT_MONITOR }))
 
 -- Swap window with mainMod + hjkl
 hl.bind(mainMod .. " + CONTROL + H", hl.dsp.window.swap({ direction = "left" }))
@@ -85,16 +92,16 @@ hl.bind(mainMod .. " + CONTROL + up", hl.dsp.window.swap({ direction = "up" }))
 hl.bind(mainMod .. " + CONTROL + right", hl.dsp.window.swap({ direction = "right" }))
 
 -- Resize using arrows
-hl.bind(mainMod .. " + ALT + left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + up", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + down", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + " .. altKey .. " + left", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + " .. altKey .. " + up", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + " .. altKey .. " + down", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + " .. altKey .. " + right", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
 
 -- Resize using hjkl
-hl.bind(mainMod .. " + ALT + h", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + k", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + j", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
-hl.bind(mainMod .. " + ALT + l", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + " .. altKey .. " + h", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + " .. altKey .. " + k", hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + " .. altKey .. " + j", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + " .. altKey .. " + l", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -184,13 +191,11 @@ end, { locked = true })
 hl.bind(mainMod .. " + F11", hl.dsp.exec_cmd("pkill " .. STATUS_BAR .. " || " .. STATUS_BAR))
 hl.bind(mainMod .. " + F12", hl.dsp.exec_cmd("pkill " .. WALLPAPER_MANAGER .. " || " .. WALLPAPER_MANAGER))
 
--- Btop
-hl.bind(mainMod .. " + SHIFT + ESCAPE", hl.dsp.exec_cmd("[float] kitty btop"))
-
--- Toggle eDP-1 monitor (bindl -> locked = true)
 hl.bind(mainMod .. " + SHIFT + DELETE", function()
-	Enable_eDP1(not EDP1_ENABLED)
+	EnableLeftMonitor(not LEFT_MONITOR_ENABLED)
 end, { locked = true })
+
+hl.bind(mainMod .. " + SHIFT + ESCAPE", hl.dsp.exec_cmd("[float] kitty btop"))
 
 -- Useful for ThinkPad layout keyboard
 hl.bind("Print", hl.dsp.exec_cmd("wtype -k Menu"))

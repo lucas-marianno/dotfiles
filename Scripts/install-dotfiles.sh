@@ -7,6 +7,7 @@ ln -s $(pwd)/htop/ ~/.config/
 ln -s $(pwd)/hypr/ ~/.config/
 +ln -s $(pwd)/ashell/ ~/.config/
 ln -s $(pwd)/ashell/ ~/.config/
+ln -s $(pwd)/hypr/waybar/ ~/.config/
 ln -s $(pwd)/kitty/ ~/.config/
 ln -s $(pwd)/nvim/ ~/.config/
 ln -s $(pwd)/tmux/ ~/.config/
