@@ -47,6 +47,7 @@ hl.bind(mainMod .. " + F", hl.dsp.window.center())
 
 -- Switch focus from current to previously focused window
 hl.bind(mainMod .. " + TAB", hl.dsp.focus({ last = true }))
+hl.bind("ALT + TAB", hl.dsp.focus({ last = true }))
 
 -- Cycle through active workspace's windows
 hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.window.cycle_next())
